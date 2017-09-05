@@ -468,8 +468,6 @@ rpart.plot(class.tree,
 ####3.3 Random Forest
 
 ```{r}
-
-str(train2)
 RF <- randomForest(lSalePrice ~.-SalePrice, data = train2, 
                    method = "anova",
                    importance=TRUE,ntree=500,nodesize=7,
@@ -518,11 +516,6 @@ accuracy(cart.pred,lSalePrice_test )
 rf.pred <- predict(RF, newdata = test_valid)
 
 accuracy(rf.pred, lSalePrice_test)
-```
-
-```{r}
-ggplot(x=lSalePrice_test)+geom_point()
-                                                  
 ```
 
 ```{r}
