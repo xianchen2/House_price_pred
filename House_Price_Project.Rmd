@@ -1,7 +1,7 @@
 ---
 title: "House Prices:Advanced Regression Techniques"
-output:
-  rmarkdown::github_document: default
+output: rmarkdown::github_document
+
 ---
 ##Setup
 
@@ -203,7 +203,7 @@ Briardale and Meadow Village have cheap houses.
 #creat a correlation maxtrix
 cormat <- cor(data.matrix(na.omit(train_cont[, -1])))
 #correlation plot
-#??
+
 row_indic <- apply(cormat, 1, function(x) sum(x > 0.3 | x < -0.3) > 1)
 cormat<- cormat[row_indic ,row_indic ]
 
